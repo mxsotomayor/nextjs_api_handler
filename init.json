@@ -1,0 +1,4 @@
+{
+ "init": "done",
+ "dispatcher_base": "./src/app/(web_api)"
+}
