@@ -5,6 +5,8 @@ import fs, { exists } from "fs-extra";
 import * as path from "path";
 import chalk from "chalk";
 import { files, baseDispatchSettings } from "./base/files";
+import settings from "./settings";
+import packages from "./package.json";
 
 (async () => {
   console.log(
@@ -16,12 +18,10 @@ import { files, baseDispatchSettings } from "./base/files";
     ██║╚████║██╔══╝░░░██╔██╗░░░░██║░░░██╔══██║██╔═══╝░██║
     ██║░╚███║███████╗██╔╝╚██╗░░░██║░░░██║░░██║██║░░░░░██║
     ╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░░░░╚═╝
-    \nv.0.0.1456\nby maxwellsr.com\n`)
+    \nv.v0.0.1\nby maxwellsr.com\n`)
   );
 
-  const exists = await fs.exists("init.json");
-
-  const apiPath = "./src/app/(web_api/api)";
+  const exists = await fs.exists("settings.json");
 
   if (!exists) {
     const { dispatcher_base } = await inquirer.prompt([
@@ -30,22 +30,16 @@ import { files, baseDispatchSettings } from "./base/files";
         name: "dispatcher_base",
         message:
           "Initializing routers. Where we should created the dispatcher?",
-        default: exists,
+        default: settings.dispatcherBasePath,
       },
     ]);
-
-    console.log("output", dispatcher_base + "/dispatch");
 
     fs.mkdir(dispatcher_base, {
       recursive: true,
     });
 
-    fs.mkdir("./src/server_routes", {
-      recursive: true,
-    });
-
     fs.outputFile(
-      "init.json",
+      "settings.json",
       JSON.stringify(
         { init: "done", dispatcher_base: dispatcher_base },
         null,

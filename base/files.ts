@@ -56,7 +56,7 @@ export type NextjsRouteProps = Record<
 
 export const baseDispatchSettings: FilesProps = {
   path: "dispatch",
-  fileName: "",
+  fileName: "route.ts",
   content: `
 // generated
 import { headers } from "next/headers";
