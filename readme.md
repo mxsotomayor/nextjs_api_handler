@@ -1,10 +1,17 @@
-# 🚀 NextJs Api Handler
+# 🚀 NextJs Api Interceptor
 
 Manage API routes simple as possible with this simple ways of handling using simple JSON files, HTTP Requests interceptors and more. Frontend and backend schemas simple wired.
 
+## Features
+
+- Cache
+- Interceptors
+- Validation
+- Mapped routes
+
 ## Commands
 
-```nextgen``` init the project and basic structure under ```src/``` folder
+```nexapi``` init the project and basic structure under ```src/``` folder
 
 ### Structure
 
@@ -21,4 +28,8 @@ next_api_handler
 
 ### How to use
 
+todo
+
 #### New Routes
+
+todo

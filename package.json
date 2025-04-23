@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-codegen",
-  "version": "1.0.0",
+  "name": "nextjs-api-interceptor",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
