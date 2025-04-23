@@ -1,4 +1,4 @@
-# 🚀 NextJS Gatepi
+# 🚀 NextJs Api Handler
 
 Manage API routes simple as possible with this simple ways of handling using simple JSON files, HTTP Requests interceptors and more. Frontend and backend schemas simple wired.
 

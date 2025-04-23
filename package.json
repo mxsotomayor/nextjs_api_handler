@@ -19,7 +19,8 @@
     "chalk": "^5.4.1",
     "fs-extra": "^11.3.0",
     "inquirer": "^12.5.2",
-    "lmdb": "^3.2.6"
+    "lmdb": "^3.2.6",
+    "next": "15.2.4"
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
