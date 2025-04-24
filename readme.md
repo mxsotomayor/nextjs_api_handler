@@ -11,7 +11,7 @@ Manage API routes simple as possible with this simple ways of handling using sim
 
 ## Commands
 
-```nexapi``` init the project and basic structure under ```src/``` folder
+```nextapi``` init the project and basic structure under ```src/``` folder
 
 ### Structure
 

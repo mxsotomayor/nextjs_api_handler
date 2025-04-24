@@ -9,7 +9,7 @@
     "start": "node dist/index.js"
   },
   "bin": {
-    "nextgen": "./dist/index.js"
+    "nextapi": "./dist/index.js"
   },
   "keywords": [],
   "author": "",
