@@ -1,29 +1,28 @@
-# 🚀 NextJs Api Interceptor
+# 🚀 NextJs API Dispatcher
 
 Manage API routes simple as possible with this simple ways of handling using simple JSON files, HTTP Requests interceptors and more. Frontend and backend schemas simple wired.
 
 ## Features
 
-- Cache
-- Interceptors
-- Validation
-- Mapped routes
+- Cache Management (LMDB)
+- Request Interceptors
+- Validations
+- Single API entry point
 
 ## Commands
 
-```nextapi``` init the project and basic structure under ```src/``` folder
+```nexther-cli``` init the project and basic structure under ```src/``` folder
 
 ### Structure
 
 ``` dir
-next_api_handler 
+nexther_routes
 └───server
 |   └───routes
 │   │       index.ts             # root export
 │   │       demo.ts              # example route
 |   |       myCustomRoute.ts     # custom route
 |   |   index.ts                 # 
-|   |   serverRequest.ts         #  
 ```
 
 ### How to use

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 interface CacheOptions {
   /** Cache key for the request */
@@ -18,14 +18,23 @@ export interface NextjsDispatcherProps {
   url: string;
   isPublic?: boolean;
   cacheOptions?: CacheOptions;
-  onSuccess?: (response: any) => any
+  /**
+   * Called after success response
+   * Recommended for mapping response and made ir more suitable for client consumption
+   * @param {unknown} response - 
+   * @param {NextResponse} originalReq - 
+   * @param {NextResponse} originalResponse - 
+   * @returns 
+   */
+  onSuccess?: (
+    response: any,
+    originalReq?: NextRequest,
+    originalResponse?: NextResponse
+  ) => any;
 }
 type HTTP_VERBS = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
 export type NextjsRouteProps = Record<
   string,
-  (
-    rest: any,
-    req: NextRequest,
-  ) => NextjsDispatcherProps
+  (rest: any, req?: NextRequest, res?: NextResponse) => NextjsDispatcherProps
 >;
