@@ -1,24 +1,33 @@
 {
   "name": "nextjs-api-interceptor",
-  "version": "0.0.5001",
-  "description": "",
+  "version": "0.0.5003",
+  "description": "Nextjs Single Dispatcher",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "dev": "ts-node cli.ts",
     "build": "tsc --project tsconfig.json --outDir dist && tsc-alias -p tsconfig.json",
-    "start": "node dist/cli.js"
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build"
   }, 
   "keywords": [],
-  "author": "",
+  "author": "@maxwellsr",
   "type": "module",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^5.4.1",
-    "fs-extra": "^11.3.0",
-    "inquirer": "^12.5.2",
-    "lmdb": "^3.2.6",
-    "next": "15.2.4",
     "pino": "^9.7.0",
     "pino-pretty": "^13.0.0"
+  },
+  "peerDependencies": {
+    "next": ">=15.2.4"        
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
