@@ -2,15 +2,11 @@
   "name": "nextjs-api-interceptor",
   "version": "0.0.3",
   "description": "",
-  "main": "./dist/cli.js",
   "scripts": {
     "dev": "ts-node cli.ts",
-    "build": "tsc && tsc-alias",
+    "build": "tsc --project tsconfig.json --outDir dist && tsc-alias -p tsconfig.json",
     "start": "node dist/cli.js"
-  },
-  "bin": {
-    "nextapi": "./dist/cli.js"
-  },
+  }, 
   "keywords": [],
   "author": "",
   "type": "module",
