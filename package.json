@@ -1,17 +1,13 @@
 {
   "name": "nextjs-api-interceptor",
-  "version": "0.0.5003",
+  "version": "0.0.505",
   "description": "Nextjs Single Dispatcher",
+  "types": "index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "index.js",
+    "index.d.ts"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.js"
-    }
-  },
   "scripts": {
     "dev": "ts-node cli.ts",
     "build": "tsc --project tsconfig.json --outDir dist && tsc-alias -p tsconfig.json",
