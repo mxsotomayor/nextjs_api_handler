@@ -1,6 +1,6 @@
 {
   "name": "nextjs-api-interceptor",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "scripts": {
     "dev": "ts-node cli.ts",
