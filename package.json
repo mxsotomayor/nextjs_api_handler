@@ -1,13 +1,14 @@
 {
   "name": "nextjs-api-interceptor",
-  "version": "0.0.516",
+  "version": "0.0.518",
   "description": "Nextjs Single Dispatcher",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && tsc && tsc --module esnext --outDir dist/esm && mv dist/esm/index.js dist/index.mjs && rm -rf dist/esm",
-    "prepublishOnly": "npm run build"
+    "build": "rm -rf dist && tsc --outDir dist --module CommonJS --declaration true && tsc --outDir dist/esm-temp --module ESNext --declaration false && node scripts/rename-esm.cjs && rm -rf dist/esm-temp",
+    "prepublishOnly": "npm run build",
+    "postbuild:esm-rename": "node scripts/rename-esm.js"
   },
   "exports": {
     ".": {
