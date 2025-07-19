@@ -10,7 +10,6 @@ Install using your favorite package manager.
 
 ```npm install nextjs-api-interceptor```
 
-### YARN
 
 ```yarn add nextjs-api-interceptor```
 
@@ -20,27 +19,3 @@ Install using your favorite package manager.
 - Request Interceptors
 - Validations
 - Single API entry point
-
-## Commands
-
-```nexther-cli``` init the project and basic structure under ```src/``` folder
-
-### Structure
-
-``` dir
-nexther_routes
-└───server
-|   └───routes
-│   │       index.ts             # root export
-│   │       demo.ts              # example route
-|   |       myCustomRoute.ts     # custom route
-|   |   index.ts                 # 
-```
-
-### How to use
-
-todo
-
-#### New Routes
-
-todo

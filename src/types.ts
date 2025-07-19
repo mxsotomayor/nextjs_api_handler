@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest } from "next/server";
 import { HttpHeaders } from "./http/headers";
 
@@ -37,13 +36,7 @@ export type NextjsProcessFnResponse =
   | Nullable<NextjsDispatcherProps>
   | Nullable<any>
   | ((rest: unknown, req?: NextRequest) => NextjsProcessFnResponse);
-
-  // /**
-  //  * @deprecated
-  //  */
-// export type NextjsProcessFn =
-//   | Nullable<NextjsDispatcherProps>
-//   | ((rest: any, req?: NextRequest) => NextjsProcessFnResponse);
+ 
 
 export type NextjsRouteProps = Record<string, NextjsProcessFnResponse>;
 

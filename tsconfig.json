@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    // "rootDir": "src",
-    "outDir": "dist"
+    "target": "es2019",                       /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "CommonJS",                     /* Specify module code generation: 'none', 'CommonJS', 'AMD', 'System', 'UMD', 'ES6', 'ES2015', 'ES2020', 'ES2022', 'ESNext', 'Node16', or 'NodeNext'. */
+    "declaration": true,                      /* Generates corresponding '.d.ts' file. */
+    "declarationDir": "./dist/types",         /* Output directory for generated declaration files. All .d.ts files will land here. */
+    "outDir": "./dist",                       /* Redirect output structure to the directory. */
+    "rootDir": "./src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "strict": true,         
+    "resolveJsonModule": true,                  /* Enable all strict type-checking options. */
+    "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "skipLibCheck": true,                     /* Skip type checking of declaration files. */
+    "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+    "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "baseUrl": ".",
   },
-  "tsc-alias": {
-    "resolveFullPaths": true,
-    "verbose": false
-  },
-  "exclude": ["node_modules", "dist"],
-  "include": ["./**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.json"],                 /* Include all TypeScript files in the 'src' directory. */
+  "exclude": ["node_modules", "dist"]         /* Exclude 'node_modules' and 'dist' directories from compilation. */
 }

@@ -3,8 +3,8 @@ import pino from "pino";
 const logger = pino(); // Default to JSON output to stdout
 
 export class BaseClient {
-  _BASE_URL: string;
-  _BASE_HEADERS: HeadersInit;
+  BASE_URL: string;
+  BASE_HEADERS: HeadersInit;
 
   /**
    * 
@@ -16,8 +16,8 @@ export class BaseClient {
     baseURL: string,
     headers: HeadersInit,
   ) {
-    this._BASE_URL = baseURL;
-    this._BASE_HEADERS = headers;
+    this.BASE_URL = baseURL;
+    this.BASE_HEADERS = headers;
   }
 
   async query<T>(
@@ -26,14 +26,14 @@ export class BaseClient {
     headers?: HeadersInit,
     method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE" = "GET"
   ) {
-    const url = `${this._BASE_URL}${endpoint}`;
+    const url = `${this.BASE_URL}${endpoint}`;
     const requestId = new Date().getTime();
 
     const fetchOptions: RequestInit = {
       method,
       headers: {
         "Content-Type":"application/json",
-        ...this._BASE_HEADERS,
+        ...this.BASE_HEADERS,
         ...headers,
       },
     };
@@ -56,7 +56,7 @@ export class BaseClient {
       const response = await fetch(url, fetchOptions);
 
       let responseData;
-      const contentType = response.headers.get("content-type") || "";
+      const contentType = response.headers.get("Content-Type") || "";
 
       logger.info({
         requestId: requestId,
