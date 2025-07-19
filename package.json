@@ -1,25 +1,42 @@
 {
   "name": "nextjs-api-interceptor",
-  "version": "0.0.511",
+  "version": "0.0.516",
   "description": "Nextjs Single Dispatcher",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && tsc ",
+    "build": "rm -rf dist && tsc && tsc --module esnext --outDir dist/esm && mv dist/esm/index.js dist/index.mjs && rm -rf dist/esm",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": {
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
+  "keywords": [
+    "nextjs",
+    "utilities",
+    "typescript",
+    "npm-package"
+  ],
+  "license": "MIT",
   "author": "@maxwellsr",
   "type": "module",
-  "license": "ISC",
   "dependencies": {
     "lmdb": "^3.4.1",
     "pino": "^9.7.0",
     "pino-pretty": "^13.0.0"
   },
   "peerDependencies": {
-    "next": "^15.4.1"
+    "next": "15.3.4"
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
